@@ -35,7 +35,7 @@ const Favourites = () => {
                 </Col>
                 <Col xs={1} className="text-end">
                   <i
-                    className="bi bi-trash fs-4"
+                    className="bi bi-trash fs-4 text-danger"
                     onClick={() => {
                       dispatch({
                         type: "REMOVE_FROM_FAVOURITES",

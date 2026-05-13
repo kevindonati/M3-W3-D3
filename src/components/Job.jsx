@@ -25,13 +25,20 @@ const Job = ({ data }) => {
       <Col xs={1} className="text-end">
         <i
           className={
-            icona ? "bi bi-bookmark-check-fill fs-4" : "bi bi-bookmark fs-4"
+            icona
+              ? "bi bi-bookmark-check-fill fs-4 text-primary"
+              : "bi bi-bookmark fs-4 text-primary"
           }
           onClick={() => {
-            dispatch({
-              type: "ADD_TO_FAVOURITES",
-              payload: data,
-            })
+            icona
+              ? dispatch({
+                  type: "REMOVE_FROM_FAVOURITES",
+                  payload: data._id,
+                })
+              : dispatch({
+                  type: "ADD_TO_FAVOURITES",
+                  payload: data,
+                })
           }}
         ></i>
       </Col>
