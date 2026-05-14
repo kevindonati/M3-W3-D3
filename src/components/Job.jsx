@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 const Job = ({ data }) => {
   const dispatch = useDispatch()
 
-  const icona = useSelector((state) =>
+  const esiste = useSelector((state) =>
     state.favourites.content.some((lavoro) => lavoro._id === data._id),
   )
 
@@ -25,12 +25,12 @@ const Job = ({ data }) => {
       <Col xs={1} className="text-end">
         <i
           className={
-            icona
+            esiste
               ? "bi bi-bookmark-check-fill fs-4 text-primary"
               : "bi bi-bookmark fs-4 text-primary"
           }
           onClick={() => {
-            icona
+            esiste
               ? dispatch({
                   type: "REMOVE_FROM_FAVOURITES",
                   payload: data._id,
